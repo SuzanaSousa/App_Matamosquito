@@ -1,29 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mata Mosquito</title>
-    <link rel="stylesheet" href="./Css/style.css">
-    <script  src="jogo.js"></script>
-</head>
-<body  onresize="ajustaTamanhoPalcoJogo()">
+  <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mata Mosquito</title>
+        <link rel="stylesheet" href="./Css/style.css">
+        <script src="jogo.js"></script>
+    </head>
+    <body onresize="ajustaTamanhoPalcoJogo()">
+      
+        <div class="painel">
+          <div class="vidas">
+            <img id="v1" src="img/coracao_cheio.png">
+            <img id="v2" src="img/coracao_cheio.png">
+            <img id="v3" src="img/coracao_cheio.png">
+          </div>
+        <div class="cronometro">Tempo restante: <span id="cronometro"></span></div>
 
-    <div class="painel">
-      <div class="vidas">
-        <img id="v1" src="img/coracao_cheio.png">
-        <img id="v2" src="img/coracao_cheio.png">
-        <img id="v3" src="img/coracao_cheio.png">
-      </div>
-    <div class="cronometro">Tempo restante: ?</div>
+        </div>
+        <script>
+            document.getElementById('cronometro').innerHTML = tempo
+            
 
-    </div>
-<script>
-    posicaoRandomica()
-
-        setInterval(function() {
-             posicaoRandomica()
-        },2000)
-</script>    
-</body>
-</html>
+              var criaMosca = setInterval(function() {
+                    posicaoRandomica()
+                },criaMosquitoTempo)
+        </script>    
+    </body>
+  </html>
