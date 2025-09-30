@@ -3,36 +3,44 @@
  var vidas = 1
  var tempo = 15
 
- var criaMosquitoTempo = 1500
+ var criaMosquitoTempo = 3000
  
  var nivel = window.location.search
 
- alert(nivel.replace('?', ''))
+/* alert(nivel.replace('?', ''))  */
 
- if(nivel === '?normal'){
-  //1500
-    }else if(nivel  === '?dificil'){
-        criaMosquitoTempo = 1000
+// --- LÓGICA DE NÍVEL DE DIFICULDADE ---
+
+ if(nivel === 'normal'){
+  //1500  padrão
+
+}else if(nivel  === 'dificil'){
+    criaMosquitoTempo = 1500
     //1000
-    }else if(nivel === '?chucknorris'){
+}else if(nivel === 'chucknorris'){
         criaMosquitoTempo = 750
     //750
-    }
-
+}
+// --- FUNÇÃO DE AJUSTE DO PALCO (CORRIGIDA) ---
 function ajustaTamanhoPalcoJogo(){
-    var altura = window.innerHeight
-    var largura = window.innerWidth
+
+     altura = window.innerHeight
+     largura = window.innerWidth
 
     console.log(largura, altura)
 }
+// Chama a função para definir as dimensões globais logo no início
 ajustaTamanhoPalcoJogo()
 
+
+
+// --- CRONÔMETRO DO JOGO ---
 var cronometro = setInterval(function() {
     tempo -=1
 
     if( tempo < 0){
         clearInterval(cronometro)
-        clearInterval(criaMosca)
+        clearInterval(criaMosca) // Garante que o mosquito pare de aparecer ao final do jogo
         window.location.href = "vitoria.html?" + nivel
 
     }else{
@@ -111,6 +119,7 @@ function ladoAleatorio() {
     }
 
 }
+
 
 
 
