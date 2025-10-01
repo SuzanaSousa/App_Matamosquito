@@ -3,11 +3,11 @@
  var vidas = 1
  var tempo = 15
 
- var criaMosquitoTempo = 3000
+ var criaMosquitoTempo = 2000
  
  var nivel = window.location.search
 
-/* alert(nivel.replace('?', ''))  */
+ nivel = nivel.replace('?', '')
 
 // --- LÓGICA DE NÍVEL DE DIFICULDADE ---
 
@@ -86,7 +86,7 @@ function posicaoRandomica() {
         mosquito.id = 'mosquito'
 
          // Adiciona a função de clique para remover o mosquito
-        mosquito.onclick = function()  {
+        mosquito.onclick = function(){
            this.remove()//this faz o proprio elemento da função
         }
 
